@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
@@ -45,6 +46,9 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+        })
+        mediaviewmodel.msg.observe(this, Observer {
+            Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
         })
 
     }
